@@ -2,3 +2,16 @@
 
 $font-logo: "Quicksand", sans-serif;
 $font-main: "Raleway", sans-serif;
+$color-blue: #284b63;
+$color-green: #3c6e71;
+$color-grey: #d9d9d9;
+$color-white: #ffffff;
+$color-black: #353535;
+
+* { 
+    padding: 0px;
+    margin: 0px;
+    font-family: $font-main;
+    font-size: 24px;
+    box-sizing: border-box;
+    }

@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Raleway&display=swap");
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Raleway", sans-serif;
+  font-size: 24px;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #284b63;
+  text-align: center;
+}
+header h1 {
+  color: #ffffff;
+  font-size: 40px;
+  padding: 20px;
+}
+
+main {
+  margin: 10px;
+}
+
+.languages {
+  color: #3c6e71;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px solid #d9d9d9;
+  padding: 20px;
+}
+
+.input {
+  padding: 40px 0px;
+}
+.input h1 {
+  color: #284b63;
+}
+.input .input__block {
+  padding: 20px;
+}
+.input .input__block .input__string {
+  text-align: start;
+  color: #3c6e71;
+  border: 2px solid #3c6e71;
+  border-radius: 20px;
+  padding: 20px;
+  outline: none;
+  margin: 20px;
+}
+.input .input__block .input__translate {
+  padding: 20px;
+  border: 2px solid #284b63;
+  background-color: #3c6e71;
+  color: #ffffff;
+  border-radius: 20px;
+  margin: 20px;
+}
+.input .input__block .input__translate--hover:hover {
+  background-color: #284b63;
+}
+.input .input__block .input__translate--click:active {
+  background-color: #ffffff;
+  color: #284b63;
+  font-weight: bold;
+}
+
+.output {
+  padding: 40px 0px;
+}
+.output h1 {
+  color: #284b63;
+}
+.output .output__string {
+  text-align: start;
+  color: #3c6e71;
+  border: 2px solid #3c6e71;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 20px;
+  outline: none;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  width: 100vw;
+}
+
+@media screen and (min-width: 800px) {
+  header {
+    margin: 40px;
+  }
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .languages {
+  display: grid;
+  grid-template-columns: 3fr 1fr 3fr;
+  gap: 20px;
+  width: 100vw;
+}
+main .input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .input .input__block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .output {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (min-width: 800px) {
+  main {
+    margin: 40px;
+  }
+}/*# sourceMappingURL=main.css.map */
