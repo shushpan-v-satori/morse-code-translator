@@ -28,38 +28,25 @@ const alphabet = {
 };
 
 const entries = Object.entries(alphabet);
-// console.log(entries);
 const keys = Object.keys(alphabet);
-const values = Object.values(alphabet);
-
-let inputString = [];
-// let theOutputSymbol = "";
-const pattern = /[^a-zA-Z]/g;
 
 export const translate = (inputString) => {
 const  inputStringArr = inputString.toUpperCase().split("");
 const theOutputString = inputStringArr.map((inputLetter) => {
     if (inputLetter == " ") {
-        // console.log("---1");
         return "|";
     }
     else if (keys.includes(inputLetter)) {
         const morseValues = entries.filter((entry) => {
             if (inputLetter == entry[0] ) {
-                // console.log(entry[1] + "---2");
                 return entry[1];
             };
         });
         return morseValues[0][1];
     }
-    else if (pattern.test(inputLetter)) {
-        // console.log("---3");
+    else {
         return "#";
     }
 });
-
 return theOutputString.toString().replace(/,/g,"");
 };
-
-// const myresult = translate('A C@');
-// console.log(myresult);
