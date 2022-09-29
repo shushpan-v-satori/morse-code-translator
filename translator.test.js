@@ -1,5 +1,5 @@
 import {it, expect} from "@jest/globals";
-import{translate} from "./translator"
+import{translate} from "./translator";
 
 //test data
 

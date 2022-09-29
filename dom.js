@@ -1,34 +1,49 @@
-const submitButton = document.querySelectorAll(".submit")[0];
-console.log(submitButton);
+import{translate} from "./translator.js";
 
-const container = document.querySelector(".companies__list");
-console.log(container);
+const translateEnglishButton = document.querySelectorAll(".input__translate")[0];
+console.log(translateEnglishButton);
 
-let companyDetails ='';
+const inputStringDom = document.querySelectorAll(".input__string")[0];
+console.log(inputStringDom);
+console.log(inputStringDom.disabled);
 
-const companies = [
-    { name: "Money 4 U", industry: "Finance", start: 1981, end: 2004 },
-    { name: "The Clothes Bay", industry: "Retail", start: 1992, end: 2008 },
-    { name: "Luxurious Limousines", industry: "Auto", start: 1999, end: 2007 },
-    { name: "Sunglasses House", industry: "Retail", start: 1989, end: 2010 },
-    { name: "Vantage Solutions", industry: "Technology", start: 2009, end: 2014 },
-    { name: "Money Banking", industry: "Finance", start: 1987, end: 2010 },
-    { name: "Triple Motors", industry: "Auto", start: 1986, end: 1996 },
-    { name: "Mech Smart", industry: "Technology", start: 2011, end: 2016 },
-    { name: "Ice-Cream Lettuce", industry: "Retail", start: 1981, end: 1989 },
-  ];
+const outputDom = document.querySelector(".output");
+console.log(outputDom);
 
-submitButton.addEventListener("click", (event) => {
+let inputString = '';
+let outputString='';
+let isClearOn = false;
+
+translateEnglishButton.addEventListener("click", (event) => {
     event.preventDefault();
-    const company = companies.forEach((entry) =>{
-        companyDetails = ( `
-        <div class="company">
-            <h1>${entry.name}</h1>
-            <p>industry: ${entry.industry}</p> 
-            <p>start: ${entry.start}</p> 
-            <p>end: ${entry.end}</p>
-        </div>
-        `);
-        container.innerHTML += companyDetails;
-    });
+    if (isClearOn){
+        inputStringDom.value="";
+        translateEnglishButton.innerHTML="Translate";
+        outputDom.innerHTML="";
+        isClearOn = false;
+        inputStringDom.disabled = false;
+    }
+    else{
+        if (!inputStringDom.value) {
+            inputStringDom.attributes[3].value="You need to enter text";
+            isClearOn=false;
+        }
+        else {
+            inputString=inputStringDom.value;
+            console.log(inputString);
+            outputDom.innerHTML=(`
+            <h1>Morse</h1>
+            <div class="output__string">
+            </div>`);
+            const outputStringDom = document.querySelectorAll(".output__string")[0];
+            console.log(outputStringDom);
+            outputString = translate(inputString); //need to link the translate function
+            outputStringDom.innerHTML=outputString;
+            translateEnglishButton.innerHTML="Clear";
+            isClearOn = true;
+            inputStringDom.disabled = true;
+            }
+        }
 });
+
+
