@@ -28,24 +28,41 @@ main {
   border-bottom: 1px solid #d9d9d9;
   padding: 20px;
 }
+.languages .languages__toggle {
+  padding: 20px;
+  border: 2px solid #284b63;
+  background-color: #3c6e71;
+  color: #ffffff;
+  border-radius: 20px;
+  margin: 20px 0px;
+}
+.languages .languages__toggle--hover:hover {
+  background-color: #284b63;
+}
+.languages .languages__toggle--click:active {
+  background-color: #ffffff;
+  color: #284b63;
+  font-weight: bold;
+}
 
 .input {
+  margin: 10px;
   padding: 40px 0px;
+  border-bottom: 1px solid #d9d9d9;
+  width: 100vw;
 }
 .input h1 {
   color: #284b63;
 }
-.input .input__block {
-  padding: 20px;
-}
 .input .input__block .input__string {
+  font-size: 20px;
   text-align: start;
   color: #3c6e71;
   border: 2px solid #3c6e71;
   border-radius: 20px;
   padding: 20px;
   outline: none;
-  margin: 20px;
+  margin: 20px 0px;
 }
 .input .input__block .input__translate {
   padding: 20px;
@@ -53,7 +70,7 @@ main {
   background-color: #3c6e71;
   color: #ffffff;
   border-radius: 20px;
-  margin: 20px;
+  margin: 20px 0px;
 }
 .input .input__block .input__translate--hover:hover {
   background-color: #284b63;
@@ -65,41 +82,32 @@ main {
 }
 
 .output {
+  margin: 10px;
   padding: 40px 0px;
+  width: 100vw;
 }
 .output h1 {
   color: #284b63;
 }
 .output .output__string {
+  font-size: 20px;
   text-align: start;
   color: #3c6e71;
   border: 2px solid #3c6e71;
   border-radius: 20px;
-  margin: 20px;
+  margin: 20px 0px;
   padding: 20px;
   outline: none;
 }
 
-header {
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
-  width: 100vw;
-}
-
-@media screen and (min-width: 800px) {
-  header {
-    margin: 40px;
-  }
-}
 main {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 main .languages {
   display: grid;
+  align-items: center;
   grid-template-columns: 3fr 1fr 3fr;
   gap: 20px;
   width: 100vw;
@@ -107,17 +115,17 @@ main .languages {
 main .input {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 main .input .input__block {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 main .output {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
 @media screen and (min-width: 800px) {
