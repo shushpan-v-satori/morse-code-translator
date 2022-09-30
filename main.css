@@ -3,8 +3,13 @@
   padding: 0px;
   margin: 0px;
   font-family: "Raleway", sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   box-sizing: border-box;
+}
+@media screen and (min-width: 800px) {
+  * {
+    font-size: 24px;
+  }
 }
 
 header {
@@ -13,8 +18,13 @@ header {
 }
 header h1 {
   color: #ffffff;
-  font-size: 40px;
+  font-size: 20px;
   padding: 20px;
+}
+@media screen and (min-width: 800px) {
+  header h1 {
+    font-size: 40px;
+  }
 }
 
 main {
@@ -55,22 +65,35 @@ main {
   color: #284b63;
 }
 .input .input__block .input__string {
-  font-size: 20px;
+  font-size: 14px;
   text-align: start;
   color: #3c6e71;
   border: 2px solid #3c6e71;
   border-radius: 20px;
-  padding: 20px;
+  padding: 10px;
   outline: none;
-  margin: 20px 0px;
+  margin: 10px 0px;
+}
+@media screen and (min-width: 800px) {
+  .input .input__block .input__string {
+    font-size: 20px;
+    padding: 20px;
+    margin: 20px 0px;
+  }
 }
 .input .input__block .input__translate {
-  padding: 20px;
+  padding: 10px;
   border: 2px solid #284b63;
   background-color: #3c6e71;
   color: #ffffff;
   border-radius: 20px;
-  margin: 20px 0px;
+  margin: 10px 0px;
+}
+@media screen and (min-width: 800px) {
+  .input .input__block .input__translate {
+    padding: 20px;
+    margin: 20px 0px;
+  }
 }
 .input .input__block .input__translate--hover:hover {
   background-color: #284b63;
@@ -90,17 +113,29 @@ main {
   color: #284b63;
 }
 .output .output__string {
-  font-size: 20px;
+  font-size: 14px;
   text-align: start;
   color: #3c6e71;
   border: 2px solid #3c6e71;
   border-radius: 20px;
-  margin: 20px 0px;
-  padding: 20px;
+  margin: 10px 0px;
+  padding: 10px;
   outline: none;
+}
+@media screen and (min-width: 800px) {
+  .output .output__string {
+    font-size: 20px;
+    padding: 20px;
+    margin: 20px 0px;
+  }
+}
+
+header {
+  width: 100vw;
 }
 
 main {
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
