@@ -31,7 +31,7 @@ const entries = Object.entries(alphabet);
 const keys = Object.keys(alphabet);
 const values = Object.values(alphabet);
 
-export const translateToEnglish = (inputString) => {
+export const translateToMorse = (inputString) => {
 const  inputStringArr = inputString.toUpperCase().split("");
 const theOutputString = inputStringArr.map((inputLetter) => {
     if (inputLetter == " ") {
@@ -52,11 +52,17 @@ const theOutputString = inputStringArr.map((inputLetter) => {
 return theOutputString.toString().replace(/,/g,"");
 };
 
-const translateToMorse = (inputString) => {
-    const  inputStringArr = inputString.toUpperCase().split(" ");
-    const theOutputString = inputStringArr.map((inputLetter) => {
-        if (inputLetter == " ") {
-            return "|";
+export const translateToEnglish = (inputString) => {
+    const  inputStringArr = inputString.split(/([ ]|[/|])/);
+    console.log(inputStringArr);
+    const cleanInputStringArr = inputStringArr.filter((inputLetter) => {
+        if (inputLetter !== " " && inputLetter !==""){
+            return inputLetter;
+        }
+    });
+    const theOutputString = cleanInputStringArr.map((inputLetter) => {
+        if (inputLetter == "|") {
+            return " ";
         }
         else if (values.includes(inputLetter)) {
             const englishValues = entries.filter((entry) => {
@@ -73,5 +79,5 @@ const translateToMorse = (inputString) => {
     return theOutputString.toString().replace(/,/g,"");
     };
 
-    const myresult = translateToMorse(". . .");
+    const myresult = translateToEnglish(".__ |... ...|");
     console.log(myresult);

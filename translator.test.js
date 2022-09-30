@@ -1,5 +1,5 @@
 import {it, expect} from "@jest/globals";
-import{translateToEnglish} from "./translator";
+import{translateToMorse} from "./translator";
 
 //test data
 
@@ -39,47 +39,47 @@ const testSpecialChars = specialCharacters.split("");
 
 testData.forEach((letter) => {
     it (`translate uppercase - ${letter.upperCaseLetter} to morse code`, () => {
-        const result=translateToEnglish(letter.upperCaseLetter);
+        const result=translateToMorse(letter.upperCaseLetter);
         expect(result).toBe(letter.morseLetter);
     });
 });
 
 testData.forEach((letter) => {
     it (`translate lowercase - ${letter.upperCaseLetter.toLowerCase()} to morse code`, () => {
-        const result=translateToEnglish(letter.upperCaseLetter.toLowerCase());
+        const result=translateToMorse(letter.upperCaseLetter.toLowerCase());
         expect(result).toBe(letter.morseLetter);
     });
 });
 
 it ("translates Two Words into morse" , () => {
-    const result = translateToEnglish ("Two Words");
-    expect(result).toBe("_._____|._____._._.....");
+    const result = translateToMorse ("Two Words");
+    expect(result).toBe("_ .__ ___|.__ ___ ._. _.. ...");
 });
 
 testSpecialChars.forEach((character) => {
     it (`translate ${character} to morse code`, () => {
-        const result=translateToEnglish(character);
+        const result=translateToMorse(character);
         expect(result).toBe("#");
     });
 });
 
 it ("translate sequence of special characters" , () => {
-    const result = translateToEnglish('@@@ %%% &&&');
+    const result = translateToMorse('@@@ %%% &&&');
     expect(result).toBe('###|###|###');
 });
 
 it ("translate all available numbers" , () => {
-    const result = translateToEnglish('0123456789');
+    const result = translateToMorse('0123456789');
     expect(result).toBe('##########');
 });
 
 it ("translate interrupted sequence of numbers" , () => {
-    const result = translateToEnglish('000 111 222');
+    const result = translateToMorse('000 111 222');
     expect(result).toBe('###|###|###');
 });
 
 it ("error for empty string" , () => {
-    const result = translateToEnglish('');
+    const result = translateToMorse('');
     expect(result).toBe('');
 });
 
