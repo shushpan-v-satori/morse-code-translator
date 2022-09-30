@@ -21,26 +21,49 @@ main {
     text-align: center;
     border-bottom: 1px solid $color-grey;
     padding: 20px;
+
+    .languages__toggle {
+            padding: 20px;
+            border: 2px solid $color-blue; 
+            background-color: $color-green;
+            color: $color-white;  
+            border-radius: 20px;
+            margin: 20px 0px;
+    }
+
+    .languages__toggle--hover:hover {
+        background-color: $color-blue;
+    }
+
+    .languages__toggle--click:active {
+        background-color: $color-white;
+        color: $color-blue;
+        font-weight: bold;
+    }
 }
 
 .input {
+    margin: 10px;
     padding: 40px 0px;
+    border-bottom: 1px solid $color-grey;
+    width: 100vw;
 
     h1 {
         color: $color-blue;
     }
 
     .input__block{
-        padding: 20px;
+        // padding: 20px;
 
         .input__string {
+            font-size: 20px;
             text-align: start;
             color: $color-green;
             border: 2px solid $color-green;
             border-radius: 20px;
             padding: 20px;
             outline: none;
-            margin: 20px;
+            margin: 20px 0px;
         }
     
         .input__translate {
@@ -49,7 +72,7 @@ main {
             background-color: $color-green;
             color: $color-white;  
             border-radius: 20px;
-            margin: 20px;
+            margin: 20px 0px;
         }
 
         .input__translate--hover:hover {
@@ -65,18 +88,21 @@ main {
 }
 
 .output {
+    margin: 10px;
     padding: 40px 0px;
+    width: 100vw;
 
     h1 {
         color: $color-blue;
     }
 
     .output__string{
+            font-size: 20px;
             text-align: start;
             color: $color-green;
             border: 2px solid $color-green;
             border-radius: 20px;
-            margin: 20px;
+            margin: 20px 0px;
             padding: 20px;
             outline: none;
         
