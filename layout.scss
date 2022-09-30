@@ -1,4 +1,6 @@
 header{
+    display: flex;
+    justify-content: center;
     width: 100vw;
 }
 
@@ -32,11 +34,15 @@ main {
         flex-direction: column;
         align-items: flex-start;
     }
+
+    @media screen and (min-width: 800px) {
+            margin: 40px;
+            }
 }
 
-@media screen and (min-width: 800px) {
-
-main {
-    margin: 40px;
-    }
+.copyright {
+    display: flex;
+    justify-content: flex-start;
+    width: 100vw;
 }
+
