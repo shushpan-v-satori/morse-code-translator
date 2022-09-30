@@ -12,6 +12,10 @@ $color-black: #353535;
     padding: 0px;
     margin: 0px;
     font-family: $font-main;
-    font-size: 24px;
+    font-size: 20px;
     box-sizing: border-box;
+
+    @media screen and (min-width: 800px) {
+        font-size: 24px;
+    }
     }
