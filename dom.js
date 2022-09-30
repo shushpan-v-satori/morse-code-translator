@@ -1,4 +1,4 @@
-import{translate} from "./translator.js";
+import{translateToEnglish} from "./translator.js";
 
 const translateEnglishButton = document.querySelectorAll(".input__translate")[0];
 console.log(translateEnglishButton);
@@ -37,7 +37,7 @@ translateEnglishButton.addEventListener("click", (event) => {
             </div>`);
             const outputStringDom = document.querySelectorAll(".output__string")[0];
             console.log(outputStringDom);
-            outputString = translate(inputString); //need to link the translate function
+            outputString = translateToEnglish(inputString); //need to link the translate function
             outputStringDom.innerHTML=outputString;
             translateEnglishButton.innerHTML="Clear";
             isClearOn = true;

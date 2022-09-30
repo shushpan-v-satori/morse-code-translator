@@ -1,36 +1,37 @@
 const alphabet = {
-    A: ". _" ,
-    N: "_ ." ,
-    B: "_ . . ." ,
-    O: "_ _ _" ,
-    C: "_ . _ ." ,
-    P: ". _ _ ." ,
-    D: "_ . ." ,
-    Q: "_ _ . _" ,
+    A: "._" ,
+    N: "_." ,
+    B: "_..." ,
+    O: "___" ,
+    C: "_._." ,
+    P: ".__." ,
+    D: "_.." ,
+    Q: "__._" ,
     E: "." ,
-    R: ". _ ." ,
-    F: ". . _ ." ,
-    S: ". . ." ,
-    G: "_ _ ." ,
+    R: "._." ,
+    F: ".._." ,
+    S: "..." ,
+    G: "__." ,
     T: "_" ,
-    H: ". . . ." ,
-    U: ". . _" ,
-    I: ". ." ,
-    V: ". . . _" ,
-    J: ". _ _ _" ,
-    W: ". _ _" ,
-    K: "_ . _" ,
-    X: "_ . . _" ,
-    L: ". _ . ." ,
-    Y: "_ . _ _" ,
-    M: "_ _" ,
-    Z: "_ _ . ."
+    H: "...." ,
+    U: ".._" ,
+    I: ".." ,
+    V: "..._" ,
+    J: ".___" ,
+    W: ".__" ,
+    K: "_._" ,
+    X: "_.._" ,
+    L: "._.." ,
+    Y: "_.__" ,
+    M: "__" ,
+    Z: "__.."
 };
 
 const entries = Object.entries(alphabet);
 const keys = Object.keys(alphabet);
+const values = Object.values(alphabet);
 
-export const translate = (inputString) => {
+export const translateToEnglish = (inputString) => {
 const  inputStringArr = inputString.toUpperCase().split("");
 const theOutputString = inputStringArr.map((inputLetter) => {
     if (inputLetter == " ") {
@@ -50,3 +51,27 @@ const theOutputString = inputStringArr.map((inputLetter) => {
 });
 return theOutputString.toString().replace(/,/g,"");
 };
+
+const translateToMorse = (inputString) => {
+    const  inputStringArr = inputString.toUpperCase().split(" ");
+    const theOutputString = inputStringArr.map((inputLetter) => {
+        if (inputLetter == " ") {
+            return "|";
+        }
+        else if (values.includes(inputLetter)) {
+            const englishValues = entries.filter((entry) => {
+                if (inputLetter == entry[1] ) {
+                    return entry[0];
+                };
+            });
+            return englishValues[0][0];
+        }
+        else {
+            return "#";
+        }
+    });
+    return theOutputString.toString().replace(/,/g,"");
+    };
+
+    const myresult = translateToMorse(". . .");
+    console.log(myresult);
