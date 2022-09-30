@@ -43,7 +43,7 @@ const theOutputString = inputStringArr.map((inputLetter) => {
                 return entry[1];
             };
         });
-        return morseValues[0][1];
+        return (morseValues[0][1]+" ");
     }
     else {
         return "#";
