@@ -14,7 +14,6 @@
 
 header {
   background-color: #284b63;
-  text-align: center;
 }
 header h1 {
   color: #ffffff;
@@ -30,15 +29,14 @@ header h1 {
 main {
   margin: 10px;
 }
-
-.languages {
+main .languages {
   color: #3c6e71;
   font-weight: bold;
   text-align: center;
   border-bottom: 1px solid #d9d9d9;
   padding: 20px;
 }
-.languages .languages__toggle {
+main .languages .languages__toggle {
   padding: 20px;
   border: 2px solid #284b63;
   background-color: #3c6e71;
@@ -46,25 +44,24 @@ main {
   border-radius: 20px;
   margin: 20px 0px;
 }
-.languages .languages__toggle--hover:hover {
+main .languages .languages__toggle--hover:hover {
   background-color: #284b63;
 }
-.languages .languages__toggle--click:active {
+main .languages .languages__toggle--click:active {
   background-color: #ffffff;
   color: #284b63;
   font-weight: bold;
 }
-
-.input {
+main .input {
   margin: 10px;
   padding: 40px 0px;
   border-bottom: 1px solid #d9d9d9;
   width: 100vw;
 }
-.input h1 {
+main .input h1 {
   color: #284b63;
 }
-.input .input__block .input__string {
+main .input .input__block .input__string {
   font-size: 14px;
   text-align: start;
   color: #3c6e71;
@@ -75,13 +72,13 @@ main {
   margin: 10px 0px;
 }
 @media screen and (min-width: 800px) {
-  .input .input__block .input__string {
+  main .input .input__block .input__string {
     font-size: 20px;
     padding: 20px;
     margin: 20px 0px;
   }
 }
-.input .input__block .input__translate {
+main .input .input__block .input__translate {
   padding: 10px;
   border: 2px solid #284b63;
   background-color: #3c6e71;
@@ -90,29 +87,28 @@ main {
   margin: 10px 0px;
 }
 @media screen and (min-width: 800px) {
-  .input .input__block .input__translate {
+  main .input .input__block .input__translate {
     padding: 20px;
     margin: 20px 0px;
   }
 }
-.input .input__block .input__translate--hover:hover {
+main .input .input__block .input__translate--hover:hover {
   background-color: #284b63;
 }
-.input .input__block .input__translate--click:active {
+main .input .input__block .input__translate--click:active {
   background-color: #ffffff;
   color: #284b63;
   font-weight: bold;
 }
-
-.output {
+main .output {
   margin: 10px;
   padding: 40px 0px;
   width: 100vw;
 }
-.output h1 {
+main .output h1 {
   color: #284b63;
 }
-.output .output__string {
+main .output .output__string {
   font-size: 14px;
   text-align: start;
   color: #3c6e71;
@@ -123,14 +119,22 @@ main {
   outline: none;
 }
 @media screen and (min-width: 800px) {
-  .output .output__string {
+  main .output .output__string {
     font-size: 20px;
     padding: 20px;
     margin: 20px 0px;
   }
 }
 
+.copyright p {
+  font-size: 14px;
+  color: #d9d9d9;
+  padding: 20px;
+}
+
 header {
+  display: flex;
+  justify-content: center;
   width: 100vw;
 }
 
@@ -162,9 +166,14 @@ main .output {
   flex-direction: column;
   align-items: flex-start;
 }
-
 @media screen and (min-width: 800px) {
   main {
     margin: 40px;
   }
+}
+
+.copyright {
+  display: flex;
+  justify-content: flex-start;
+  width: 100vw;
 }/*# sourceMappingURL=main.css.map */
